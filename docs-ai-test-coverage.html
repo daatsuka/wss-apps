@@ -13,6 +13,9 @@
 <h2>What it does</h2>
 <p>AI Test Coverage generates structured test cases from any Jira issue using Atlassian-hosted AI, tracks their execution status, and warns you when test cases go stale after the issue changes. All data stays inside your Atlassian site (Runs on Atlassian).</p>
 
+<h2>Demo</h2>
+<video src="demo-ai-test-coverage.mp4" controls muted playsinline style="width:100%;border:1px solid #dfe1e6;border-radius:6px"></video>
+
 <h2>Installation</h2>
 <ol>
 <li>Install the app from the Atlassian Marketplace on your Jira Cloud site.</li>
@@ -30,7 +33,14 @@
 <h3>Track execution</h3>
 <ul>
 <li>Click a test case's status badge to cycle it through <strong>Not Run → Pass → Fail → Blocked</strong>.</li>
-<li>The panel header shows a live counter of executed vs. total test cases.</li>
+<li>The panel header shows a live counter of executed vs. total test cases, plus a coverage summary by case type.</li>
+<li>Click <strong>Complete test run</strong> to archive the current results into <strong>Run history</strong> (last 20 runs) and reset all statuses for the next cycle.</li>
+</ul>
+<h3>Edit and manage test cases</h3>
+<ul>
+<li>Each test case can be edited in place: title, type, steps, and expected result.</li>
+<li>Delete cases you don't need, or click <strong>Add test case</strong> to write one manually.</li>
+<li>Manually added cases are kept when you regenerate the AI set.</li>
 </ul>
 <h3>Stale test detection</h3>
 <p>If the issue is updated after test cases were generated, the panel shows a warning that the test cases may be outdated. Click <strong>Regenerate</strong> to create a fresh set based on the latest issue content.</p>
@@ -40,7 +50,7 @@
 
 <h2>FAQ</h2>
 <p><strong>Which issue types are supported?</strong> All issue types that show the issue view panel (stories, tasks, bugs, etc.).</p>
-<p><strong>Can I edit generated test cases?</strong> The current version supports regenerating the full set; per-case editing is on the roadmap.</p>
+<p><strong>Can I edit generated test cases?</strong> Yes — every case can be edited, deleted, or added manually. Manual cases survive regeneration.</p>
 <p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
 
 <h2>Support</h2>
