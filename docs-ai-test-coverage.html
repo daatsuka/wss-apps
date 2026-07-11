@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — AI Test Coverage for Jira</title>
+<style>body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#172b4d}h1,h2{color:#091e42}small{color:#6b778c}code{background:#f4f5f7;padding:2px 5px;border-radius:3px}</style>
+</head>
+<body>
+<h1>AI Test Coverage for Jira — Documentation</h1>
+<small>WSS Apps — Last updated: July 12, 2026</small>
+
+<h2>What it does</h2>
+<p>AI Test Coverage generates structured test cases from any Jira issue using Atlassian-hosted AI, tracks their execution status, and warns you when test cases go stale after the issue changes. All data stays inside your Atlassian site (Runs on Atlassian).</p>
+
+<h2>Installation</h2>
+<ol>
+<li>Install the app from the Atlassian Marketplace on your Jira Cloud site.</li>
+<li>No configuration is required. The app adds a panel to every Jira issue.</li>
+</ol>
+
+<h2>Using the app</h2>
+<h3>Generate test cases</h3>
+<ol>
+<li>Open any Jira issue that has a summary (and ideally a description).</li>
+<li>Below the issue title, open <strong>Apps actions</strong> and select <strong>AI Test Coverage</strong> to show the panel.</li>
+<li>Click <strong>Generate test cases</strong>. The app sends the issue's summary and description to Atlassian's Forge LLM service and creates a set of test cases with preconditions, steps, and expected results.</li>
+<li>Each test case is categorized as <em>functional</em>, <em>edge</em>, or <em>negative</em> so you can see coverage balance at a glance.</li>
+</ol>
+<h3>Track execution</h3>
+<ul>
+<li>Click a test case's status badge to cycle it through <strong>Not Run → Pass → Fail → Blocked</strong>.</li>
+<li>The panel header shows a live counter of executed vs. total test cases.</li>
+</ul>
+<h3>Stale test detection</h3>
+<p>If the issue is updated after test cases were generated, the panel shows a warning that the test cases may be outdated. Click <strong>Regenerate</strong> to create a fresh set based on the latest issue content.</p>
+
+<h2>Data &amp; privacy</h2>
+<p>Test cases and execution status are stored in Forge app storage, scoped to your site. Issue text is processed only by Atlassian's Forge LLM service and never leaves the Atlassian platform. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>FAQ</h2>
+<p><strong>Which issue types are supported?</strong> All issue types that show the issue view panel (stories, tasks, bugs, etc.).</p>
+<p><strong>Can I edit generated test cases?</strong> The current version supports regenerating the full set; per-case editing is on the roadmap.</p>
+<p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
+
+<h2>Support</h2>
+<p>Email <a href="mailto:daatsuka8810@gmail.com">daatsuka8810@gmail.com</a> — we aim to respond within 2 business days.</p>
+</body>
+</html>
