@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — AI Governance Register for Jira</title>
+<style>body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#172b4d}h1,h2{color:#091e42}small{color:#6b778c}code{background:#f4f5f7;padding:2px 5px;border-radius:3px}</style>
+</head>
+<body>
+<h1>AI Governance Register for Jira — Documentation</h1>
+<small>WSS Apps — Last updated: July 12, 2026</small>
+
+<h2>What it does</h2>
+<p>AI Governance Register gives your organization a living inventory of every AI system you provide or use, classified under the <strong>EU AI Act</strong> (Regulation 2024/1689), with per-system obligation checklists, evidence tracking, review cycles, and exportable compliance reports. It doubles as the AI system inventory required by <strong>ISO/IEC 42001</strong> and supports NIST AI RMF mapping. All data stays inside your Atlassian site (Runs on Atlassian).</p>
+
+<h2>Installation</h2>
+<ol>
+<li>Install the app from the Atlassian Marketplace on your Jira Cloud site.</li>
+<li>Go to <strong>Jira Settings → Apps → AI Governance Register</strong> to open the admin page.</li>
+</ol>
+
+<h2>Using the register</h2>
+<h3>1. Register your AI systems</h3>
+<ul>
+<li>Click <strong>Add AI system</strong> and describe each AI tool, model, or feature: purpose, underlying model/vendor, owner, your role (deployer/provider/importer/distributor), deployment, and data categories processed.</li>
+<li>Include SaaS AI features and internal tools — the EU AI Act applies to deployers, not just vendors.</li>
+</ul>
+<h3>2. Classify risk — with AI assistance</h3>
+<ul>
+<li>Click <strong>AI assess (EU AI Act)</strong> to get a suggested risk classification (prohibited / high / limited / minimal), Annex III categories, GPAI flag, and a rationale citing the relevant articles.</li>
+<li>The suggestion never changes your data until a human clicks <strong>Apply suggestion</strong> — you stay in control.</li>
+<li>You can always classify manually and record your own rationale.</li>
+</ul>
+<h3>3. Work the obligations checklist</h3>
+<p>Each risk class gets the matching obligation checklist — e.g. high-risk systems show Art 9–15 (risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy), Art 27 (FRIA) and Art 49 (EU database registration); limited-risk systems show the Art 50 transparency duties; GPAI providers get Art 53 items. Attach evidence links per system.</p>
+<h3>4. Review cycles</h3>
+<p>Set a 3/6/12-month review cycle per system. The register flags systems overdue for review, and <strong>Mark reviewed</strong> records the date.</p>
+<h3>5. Report and export</h3>
+<p>The <strong>Compliance Report</strong> tab shows counts by risk class, GPAI count, obligation completion, and overdue reviews. Click <strong>Export CSV</strong> for auditors and management.</p>
+
+<h2>Data &amp; privacy</h2>
+<p>All register data is stored in Forge app storage, scoped to your site and visible only to site administrators. AI assessments are processed exclusively by Atlassian's Forge LLM service and never leave the Atlassian platform. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>FAQ</h2>
+<p><strong>Is this legal advice?</strong> No. The app provides documentation support and AI-assisted suggestions to help you organize your compliance work. Always validate classifications with your legal or compliance team.</p>
+<p><strong>Does it cover ISO/IEC 42001?</strong> The register serves as the AI system inventory and impact-assessment documentation base an AIMS requires. For clause-by-clause AIMS documentation, use it alongside your management system documents.</p>
+<p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
+<p><strong>What are the key EU AI Act deadlines?</strong> Prohibitions and AI literacy have applied since February 2025, GPAI obligations since August 2025, and most high-risk obligations apply from August 2026 (some from August 2027). Fines reach €35M or 7% of global turnover.</p>
+
+<h2>Support</h2>
+<p>Email <a href="mailto:daatsuka8810@gmail.com">daatsuka8810@gmail.com</a> — we aim to respond within 2 business days.</p>
+</body>
+</html>
