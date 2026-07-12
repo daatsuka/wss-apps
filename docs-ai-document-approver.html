@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — AI Document Approver for Confluence</title>
+<style>body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#172b4d}h1,h2{color:#091e42}small{color:#6b778c}code{background:#f4f5f7;padding:2px 5px;border-radius:3px}</style>
+</head>
+<body>
+<h1>AI Document Approver for Confluence — Documentation</h1>
+<small>WSS Apps — Last updated: July 13, 2026</small>
+
+<h2>What it does</h2>
+<p>AI Document Approver adds a lightweight approval workflow to any Confluence page — request sign-off from one or more approvers, track decisions with notes and due dates, and keep a full activity log. Before you send a page for review, an optional <strong>AI quality check</strong> scores the page 0–100 and flags concrete issues (unfinished TODOs, vague statements, missing sections), so approvers receive documents that are actually ready. AI analysis runs exclusively on Atlassian's own LLM service — your page content never leaves the Atlassian platform (Runs on Atlassian).</p>
+
+<h2>Installation</h2>
+<ol>
+<li>Install the app from the Atlassian Marketplace on your Confluence Cloud site.</li>
+<li>Open any page and click <strong>Approvals &amp; AI Check</strong> in the byline (under the page title).</li>
+<li>The cross-space dashboard is available under <strong>Apps → Document Approvals</strong>.</li>
+</ol>
+
+<h2>Using the app</h2>
+<h3>1. Run the AI quality check (optional but recommended)</h3>
+<ul>
+<li>Click <strong>Run AI quality check</strong>. The app reads the current page version and returns a <strong>score (0–100)</strong>, a verdict — <strong>READY</strong>, <strong>MINOR FIXES</strong>, or <strong>NEEDS WORK</strong> — a three-line summary, and up to six specific issues tagged high / medium / low severity.</li>
+<li>The report remembers which page version it reviewed. If the page is edited afterwards, the report is marked <strong>stale</strong> and you can re-run it with one click.</li>
+</ul>
+<h3>2. Request approval</h3>
+<ul>
+<li>Search approvers by name and add one or more of them.</li>
+<li>Optionally add a note for the approvers and a due date (e.g. <code>2026-07-31</code>).</li>
+<li>Click <strong>Request approval</strong>. The page status becomes <strong>PENDING</strong> and each approver sees Approve / Reject buttons when they open the page.</li>
+</ul>
+<h3>3. Approve or reject</h3>
+<ul>
+<li>Each listed approver decides independently, with an optional decision note.</li>
+<li><strong>All approve → APPROVED.</strong> <strong>Any rejection → REJECTED</strong> immediately.</li>
+<li>If the page is edited while a request is pending, a warning shows exactly which versions differ (e.g. "v3 to v5"), so approvers know they are reviewing newer content than requested.</li>
+<li>The requester can cancel a pending request at any time. A new request can be started after any final decision.</li>
+</ul>
+<h3>4. Track everything in the dashboard</h3>
+<ul>
+<li><strong>Waiting for me</strong> — pages where your decision is pending.</li>
+<li><strong>All requests</strong> — every request on the site with status, requester, approvers, AI score, due date (overdue dates are highlighted), and request time.</li>
+<li><strong>Export CSV</strong> — one row per request, ready for compliance or audit spreadsheets.</li>
+</ul>
+<h3>5. Activity log</h3>
+<p>Every event — AI checks with scores, requests, approvals, rejections, cancellations — is recorded per page with actor and timestamp. Click <strong>Show activity</strong> in the byline panel to review it.</p>
+
+<h2>Data &amp; privacy</h2>
+<p>The app reads page content with the permissions of the person running the check — users can never analyze pages they cannot see. Approval records (page ID, approver account IDs and display names, statuses, notes, timestamps) are stored in Forge app storage, scoped to your site. AI analysis is processed exclusively by Atlassian's Forge LLM service and never leaves the Atlassian platform. No data is used for AI training. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>FAQ</h2>
+<p><strong>Does the AI decide approvals?</strong> No. The AI only provides an advisory quality score and issue list. Approval decisions are always made by the humans you choose.</p>
+<p><strong>What does the AI check look for?</strong> Completeness (TODO/TBD placeholders, missing sections), clarity, structure, and internal consistency. Each issue is tagged with a severity so authors know what to fix first.</p>
+<p><strong>Can approvers see pages they don't have access to?</strong> The byline panel lives on the page itself, so Confluence's own permissions apply — no access is ever widened by the app.</p>
+<p><strong>What happens if a page is edited during review?</strong> The request stays open, but both the panel and the AI report show clear version-mismatch warnings so nobody signs off on stale information unknowingly.</p>
+<p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
+
+<h2>Support</h2>
+<p>Email <a href="mailto:daatsuka8810@gmail.com">daatsuka8810@gmail.com</a> — we aim to respond within 2 business days.</p>
+</body>
+</html>
