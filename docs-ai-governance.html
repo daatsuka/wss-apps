@@ -11,7 +11,7 @@
 <small>WSS Apps — Last updated: July 12, 2026</small>
 
 <h2>What it does</h2>
-<p>AI Governance Register gives your organization a living inventory of every AI system you provide or use, classified under the <strong>EU AI Act</strong> (Regulation 2024/1689), with per-system obligation checklists, evidence tracking, review cycles, and exportable compliance reports. It doubles as the AI system inventory required by <strong>ISO/IEC 42001</strong> and supports NIST AI RMF mapping. All data stays inside your Atlassian site (Runs on Atlassian).</p>
+<p>AI Governance Register gives your organization a living inventory of every AI system you provide or use, classified under the <strong>EU AI Act</strong> (Regulation 2024/1689), with per-system obligation checklists, legal deadlines, evidence tracking, review cycles, sign-offs, incident logging, an immutable audit trail, AI-drafted compliance documents (FRIA, transparency notice, technical documentation, AI literacy plan), and exportable compliance reports. Every obligation is mapped to <strong>ISO/IEC 42001</strong> controls and <strong>NIST AI RMF</strong> functions, so working the checklist documents all three frameworks at once. All data stays inside your Atlassian site (Runs on Atlassian).</p>
 
 <h2>Demo</h2>
 <video src="demo-ai-governance.mp4" controls muted playsinline style="width:100%;border:1px solid #dfe1e6;border-radius:6px"></video>
@@ -35,18 +35,32 @@
 <li>You can always classify manually and record your own rationale.</li>
 </ul>
 <h3>3. Work the obligations checklist</h3>
-<p>Each risk class gets the matching obligation checklist — e.g. high-risk systems show Art 9–15 (risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy), Art 27 (FRIA) and Art 49 (EU database registration); limited-risk systems show the Art 50 transparency duties; GPAI providers get Art 53 items. Attach evidence links per system.</p>
-<h3>4. Review cycles</h3>
+<p>Each risk class gets the matching obligation checklist — e.g. high-risk systems show Art 9–15 (risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy), Art 27 (FRIA) and Art 49 (EU database registration); limited-risk systems show the Art 50 transparency duties; GPAI providers get Art 53 items. Every item displays its ISO/IEC 42001 control, NIST AI RMF function, and legal application deadline; the register shows a deadline chip per system and flags passed deadlines. Attach evidence links per system.</p>
+<h3>4. Generate compliance documents with AI</h3>
+<ul>
+<li><strong>FRIA wizard (Art 27)</strong> — for high-risk systems, answer five guided questions and generate a structured Fundamental Rights Impact Assessment draft. Missing facts become <code>[TO CONFIRM]</code> placeholders instead of invented content.</li>
+<li><strong>Document drafts</strong> — one click generates a user-facing transparency notice (Art 50), a technical documentation skeleton (Art 11 / Annex IV), or an AI literacy plan (Art 4) from the system's registered facts.</li>
+<li>All drafts run on Atlassian's Forge LLM — no data leaves your instance — and always require human review.</li>
+</ul>
+<h3>5. Sign-off and incidents</h3>
+<ul>
+<li><strong>Sign-off</strong> records the approving Atlassian account, timestamp, and note, and sets the system to approved.</li>
+<li><strong>Incidents (Art 73)</strong> — log malfunctions and harm per system with severity and reporting status. Serious incidents not yet reported to authorities are flagged prominently.</li>
+</ul>
+<h3>6. Audit trail</h3>
+<p>The <strong>Audit Trail</strong> tab keeps an immutable, field-level change log of every create, edit, classification, sign-off, AI action, and incident — who, when, and what changed — exportable as CSV for auditors.</p>
+<h3>7. Review cycles</h3>
 <p>Set a 3/6/12-month review cycle per system. The register flags systems overdue for review, and <strong>Mark reviewed</strong> records the date.</p>
-<h3>5. Report and export</h3>
-<p>The <strong>Compliance Report</strong> tab shows counts by risk class, GPAI count, obligation completion, and overdue reviews. Click <strong>Export CSV</strong> for auditors and management.</p>
+<h3>8. Report and export</h3>
+<p>The <strong>Compliance Report</strong> tab shows counts by risk class, GPAI count, an organization-wide compliance score with daily history, NIST AI RMF framework coverage, upcoming and passed obligation deadlines, incident summary, sign-off status, and overdue reviews. Click <strong>Export CSV</strong> for auditors and management.</p>
 
 <h2>Data &amp; privacy</h2>
 <p>All register data is stored in Forge app storage, scoped to your site and visible only to site administrators. AI assessments are processed exclusively by Atlassian's Forge LLM service and never leave the Atlassian platform. See the <a href="privacy.html">Privacy Policy</a>.</p>
 
 <h2>FAQ</h2>
 <p><strong>Is this legal advice?</strong> No. The app provides documentation support and AI-assisted suggestions to help you organize your compliance work. Always validate classifications with your legal or compliance team.</p>
-<p><strong>Does it cover ISO/IEC 42001?</strong> The register serves as the AI system inventory and impact-assessment documentation base an AIMS requires. For clause-by-clause AIMS documentation, use it alongside your management system documents.</p>
+<p><strong>Does it cover ISO/IEC 42001?</strong> The register serves as the AI system inventory and impact-assessment documentation base an AIMS requires, and every obligation shows its mapped ISO/IEC 42001 control. For clause-by-clause AIMS documentation, use it alongside your management system documents.</p>
+<p><strong>Are the AI-generated documents ready to submit?</strong> They are structured first drafts based strictly on your registered facts, with gaps marked <code>[TO CONFIRM]</code>. Review by your legal/compliance team is always required.</p>
 <p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
 <p><strong>What are the key EU AI Act deadlines?</strong> Prohibitions and AI literacy have applied since February 2025, GPAI obligations since August 2025, and most high-risk obligations apply from August 2026 (some from August 2027). Fines reach €35M or 7% of global turnover.</p>
 
