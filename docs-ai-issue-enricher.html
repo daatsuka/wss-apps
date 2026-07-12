@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — AI Issue Enricher for Jira</title>
+<style>body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#172b4d}h1,h2{color:#091e42}small{color:#6b778c}code{background:#f4f5f7;padding:2px 5px;border-radius:3px}</style>
+</head>
+<body>
+<h1>AI Issue Enricher for Jira — Documentation</h1>
+<small>WSS Apps — Last updated: July 13, 2026</small>
+
+<h2>What it does</h2>
+<p>AI Issue Enricher turns vague Jira issues into actionable ones. From a panel on any issue, run an <strong>AI readiness check</strong> that scores the issue 0–100 against a Definition of Ready and lists exactly what is missing (no acceptance criteria, underspecified flows, unstated edge cases), each tagged high / medium / low severity. Then <strong>generate draft acceptance criteria</strong> in Given/When/Then form, edit or delete individual criteria, and <strong>apply them to the issue description</strong> with one click — the app appends an "Acceptance Criteria" section and never overwrites existing text. AI analysis runs exclusively on Atlassian's own LLM service — your issue content never leaves the Atlassian platform (Runs on Atlassian).</p>
+
+<h2>Installation</h2>
+<ol>
+<li>Install the app from the Atlassian Marketplace on your Jira Cloud site.</li>
+<li>Open any issue, click the <strong>app actions</strong> button in the issue toolbar, and select <strong>AI Issue Enricher</strong> to add the panel.</li>
+<li>The panel stays on the issue view afterwards.</li>
+</ol>
+
+<h2>Using the app</h2>
+<h3>1. Run the AI readiness check</h3>
+<ul>
+<li>Click <strong>Run AI readiness check</strong>. The app reads the issue summary and description and returns a <strong>readiness score (0–100)</strong>, a verdict — <strong>READY</strong>, <strong>NEEDS DETAIL</strong>, or <strong>INCOMPLETE</strong> — a short summary, and up to six concrete gaps tagged by severity.</li>
+<li>Typical gaps it finds: no acceptance criteria, missing user/goal, unspecified error handling, vague scope, undefined terms, missing reproduction steps.</li>
+<li>If the issue is edited after a run, the panel shows a <strong>stale</strong> warning so you know to re-run.</li>
+</ul>
+<h3>2. Generate acceptance criteria</h3>
+<ul>
+<li>Click <strong>Generate acceptance criteria</strong>. The AI drafts 3–8 testable criteria in <em>Given / When / Then</em> form, covering the main flow plus key edge and failure cases.</li>
+<li>Review the draft: <strong>Edit</strong> any criterion inline or <strong>Delete</strong> ones you don't want. Nothing touches the issue until you apply.</li>
+</ul>
+<h3>3. Apply to the issue description</h3>
+<ul>
+<li>Click <strong>Apply to issue description</strong>. The app appends an <strong>Acceptance Criteria</strong> heading and bullet list to the end of the description — existing description content is never modified or overwritten.</li>
+<li>After applying, the draft is marked <strong>applied</strong>. Regenerate at any time to produce a fresh draft.</li>
+</ul>
+
+<h2>Data &amp; privacy</h2>
+<p>The app stores only the AI analysis results and draft criteria (scores, verdicts, gap texts, criteria strings, timestamps) in Forge app storage, scoped to your site — no personal data is collected. Issue content is read via the Jira REST API within your site and processed exclusively by Atlassian's Forge LLM service; it never leaves the Atlassian platform. No data is used for AI training. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>FAQ</h2>
+<p><strong>Does the AI change my issues automatically?</strong> No. All AI output is a draft. The description is only modified when a person clicks "Apply to issue description", and even then content is appended — never overwritten.</p>
+<p><strong>What does the readiness score mean?</strong> 80+ = READY (a developer can pick it up cold), 50–79 = NEEDS DETAIL, below 50 = INCOMPLETE. The score is advisory — your team decides what "ready" means.</p>
+<p><strong>Which issue types does it work on?</strong> Any issue type with a summary and description — stories, tasks, bugs, epics.</p>
+<p><strong>What happens if the issue is edited after a check?</strong> The panel shows a staleness warning so you can re-run the analysis against the latest content.</p>
+<p><strong>Does it use my data to train AI models?</strong> No. Atlassian's Forge LLM service does not use your data for training.</p>
+
+<h2>Support</h2>
+<p>Questions or bug reports: <a href="https://github.com/daatsuka/wss-apps/issues">GitHub issue tracker</a>.</p>
+</body>
+</html>
